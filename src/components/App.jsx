@@ -12,6 +12,22 @@ export class App extends Component {
     bad: 0
   };
 
+  onLeaveFeedback = e => {
+    switch (e) {
+      case 'good':
+        this.setState(state => ({ good: state.good + 1 }));
+        break;
+      case 'neutral':
+        this.setState(state => ({ neutral: state.neutral + 1 }));
+        break;
+      case 'bad':
+        this.setState(state => ({ bad: state.bad + 1 }));
+        break;
+      default:
+        return 0;
+    }
+  };
+
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
@@ -19,12 +35,6 @@ export class App extends Component {
 
   countPositiveFeedbackPercentage = () => {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100).toFixed(0);
-  };
-
-  onLeaveFeedback = state => {
-    this.setState(prevState => ({
-      [state]: prevState[state] + 1,
-    }));
   };
 
   render() {
