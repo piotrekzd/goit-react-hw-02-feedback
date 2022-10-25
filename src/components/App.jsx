@@ -3,6 +3,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';  
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import style from './App.module.css'
 
 export class App extends Component {
   state = {
@@ -17,7 +18,7 @@ export class App extends Component {
   };
 
   countPositiveFeedbackPercentage() {
-    return Math.round((this.state.good / this.countTotalFeedback) * 100);
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   onLeaveFeedback = state => {
@@ -31,16 +32,7 @@ export class App extends Component {
     const options = Object.keys(this.state);
 
     return (
-      <div
-        style={{
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101'
-        }}
-      >
+      <div className={style.wrapper}>
         <Section title="Please, leave feedback">
           <FeedbackOptions
             options={options}
