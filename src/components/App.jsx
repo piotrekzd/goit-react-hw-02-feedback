@@ -22,7 +22,7 @@ export class App extends Component {
 
   onLeaveFeedback = state => {
     this.setState(prevState => ({
-      [state]: prevState[state] + 1,
+      [state]: prevState + 1,
     }));
   };
 
