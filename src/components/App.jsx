@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';  
-import { Statistics } from './Statistics/Statistics';
-import { Notification } from './Notification/Notification';
+// import { Statistics } from './Statistics/Statistics';
+// import { Notification } from './Notification/Notification';
 import style from './App.module.css'
 
 export class App extends Component {
@@ -38,7 +38,7 @@ export class App extends Component {
   };
 
   render() {
-    const { good, neutral, bad } = this.state;
+    // const { good, neutral, bad } = this.state;
 
     return (
       <div className={style.wrapper}>
@@ -48,7 +48,7 @@ export class App extends Component {
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
-        <Section title="Statistics">
+        {/* <Section title="Statistics">
           {this.countTotalFeedback() > 0 ? (
             <Statistics
               good={good}
@@ -60,7 +60,7 @@ export class App extends Component {
           ) : (
             <Notification message="There is no feedback yet" />
           )};
-        </Section>
+        </Section> */}
       </div>
     );
   };
