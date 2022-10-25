@@ -3,24 +3,24 @@ import style from './FeedbackOptions.module.css'
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
-        <div>
-            {options.map((option) => {
-                return (
+        <ul className={style.btnList}>
+            {options.map(option => (
+                <li key={option}
+                    className={style.btnListItem}
+                >
                     <button
-                        className={style.btn}
-                        type='button'
                         onClick={() => onLeaveFeedback(option)}
-                        key={option}
+                        className={style.btn}
                     >
                         {option}
                     </button>
-                );
-            })};
-        </div>
+                </li>
+            ))};
+        </ul>
     );
 };
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
+    options: PropTypes.array.isRequired,
     onLeaveFeedback: PropTypes.func.isRequired
 };

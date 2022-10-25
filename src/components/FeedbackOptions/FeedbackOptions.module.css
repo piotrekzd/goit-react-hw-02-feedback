@@ -1,3 +1,13 @@
+.btnList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.btnListItem:not(:last-child) {
+    margin-right: 20px;
+}
+
 .btn {
     width: 100px;
     height: 20px;
@@ -13,8 +23,5 @@
 }
 
 .btn:hover {
-    width: 110px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
 }
