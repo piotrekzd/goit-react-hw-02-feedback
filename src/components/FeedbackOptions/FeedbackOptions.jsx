@@ -15,7 +15,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
                         {option}
                     </button>
                 </li>
-            ))};
+            ))}
         </ul>
     );
 };
